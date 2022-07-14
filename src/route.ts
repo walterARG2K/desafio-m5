@@ -50,7 +50,7 @@ export function initRouter(container: Element | null) {
         });
     }
 
-    if (location.pathname == "/") {
+    if (location.pathname == BASE_PATH + "/") {
         goTo("/welcome");
     } else {
         handleRoute(location.pathname);

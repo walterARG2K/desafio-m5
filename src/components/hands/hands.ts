@@ -76,7 +76,7 @@ export function handsComponent() {
 }
 
 function onClickHand(handContainer: Node) {
-    if (location.pathname == "/play") {
+    if (location.pathname.includes("/play")) {
         function eventListener() {
             //@ts-ignore
             let handSelected = handContainer.attributes[0].nodeValue;
