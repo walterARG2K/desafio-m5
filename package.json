@@ -8,7 +8,7 @@
   "source": "./src/index.html",
   "scripts": {
     "dev": "parcel serve",
-    "build": "parcel build --dist-dir build",
+    "build": "parcel build --dist-dir build --public-url /desafio-m5",
     "deploy":"gh-pages -d build"
   },
   "dependencies": {
