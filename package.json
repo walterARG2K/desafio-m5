@@ -1,0 +1,17 @@
+{
+  "name": "desafio-mod-5",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  },
+  "source": "./src/index.html",
+  "scripts": {
+    "dev": "parcel serve",
+    "build": "parcel build --dist-dir build",
+    "deploy":"gh-pages -d build"
+  },
+  "dependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
