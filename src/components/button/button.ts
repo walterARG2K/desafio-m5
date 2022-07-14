@@ -29,12 +29,14 @@ export function buttonComponent() {
             .score-button{  
                 border:solid 10px #5b1f1f;
                 background-color:#C62222;
+                font-size: 25px;
             }
 
             .container{ 
             display:flex;
             flex-direction:column;
             align-items:center;
+            padding:0 30px;
             }
             `;
 

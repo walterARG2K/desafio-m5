@@ -14,12 +14,13 @@ export function textComponent() {
             //adding styles
             style.textContent = `
             .title{ 
-                font-family:'American Typewriter';
-                font-size:80px;
+                font-family:'Alegreya SC';
+                font-size:65px;
                 letter-spacing: 3px;
                 color:#009048;
                 padding:0 61px;
-                margin-top: 70px
+                margin-top: 70px;
+                text-align:center;
             }
             @media(min-width:769px){    
                 .title{

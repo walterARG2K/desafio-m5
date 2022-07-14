@@ -36,7 +36,6 @@ export function initRouter(container: Element | null) {
     }
 
     function handleRoute(route) {
-        console.log("El handleRoute recibió una nueva ruta", route);
         const newRoute = isGithubPages() ? route.replace(BASE_PATH, "") : route;
         routes.forEach((i) => {
             if (i.path.test(newRoute)) {

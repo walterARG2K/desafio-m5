@@ -1,26 +1,8 @@
 import { state } from "../../state";
 var handWinUser;
 var handWinPc;
-
-export function initResults(params) {
-    window.addEventListener("load", () => {
-        //@ts-ignore
-        const imageURL = require("url:../../images/fondo.svg");
-        //@ts-ignore
-        document.querySelector(".root").style.backgroundImage = `url(${imageURL})`;
-        //@ts-ignore
-        document.querySelector(".root").innerHTML = `
-        <score-custom>Score</score-custom>
-        <button-custom>Volver al inicio</button-custom>
-        `;
-        setTimeout(() => {
-            document.querySelector("button-custom")?.addEventListener("click", () => {
-                params.goTo("/welcome");
-            });
-        }, 0);
-    });
-
-    const div = document.createElement("div");
+const div = document.createElement("div");
+function results(params) {
     const backgroundImage = document.createElement("div");
     const style = document.createElement("style");
     const containerHands = document.createElement("div");
@@ -97,7 +79,7 @@ export function initResults(params) {
     div.innerHTML += `
     <star-custom>${result}</star-custom>
     <score-custom>Score</score-custom>
-    <div style="display:flex;flex-direction:column;gap: 40px">
+    <div style="display:flex;flex-direction:column;gap: 30px">
     <button-custom>Volver a Jugar</button-custom>
     <button-custom class="score-button" type="score-button">Reiniciar puntaje</button-custom>
     </div>
@@ -121,7 +103,35 @@ export function initResults(params) {
             params.goTo("/results");
         });
     }, 0);
-    return div;
+}
+
+export function initResults(params) {
+    if (handWinPc && handWinUser !== undefined) {
+        while (div?.firstChild) {
+            div.lastChild?.remove();
+        }
+        results(params);
+        return div;
+    } else {
+        const divEl = document.createElement("div");
+        window.addEventListener("load", () => {
+            //@ts-ignore
+            const imageURL = require("url:../../images/fondo.svg");
+            //@ts-ignore
+            document.querySelector(".root").style.backgroundImage = `url(${imageURL})`;
+            //@ts-ignore
+            document.querySelector(".root").innerHTML = `
+        <score-custom>Score</score-custom>
+        <button-custom>Volver al inicio</button-custom>
+        `;
+            setTimeout(() => {
+                document.querySelector("button-custom")?.addEventListener("click", () => {
+                    params.goTo("/welcome");
+                });
+            }, 0);
+        });
+        return divEl;
+    }
 }
 
 export function handWinner(handUser, handPc) {

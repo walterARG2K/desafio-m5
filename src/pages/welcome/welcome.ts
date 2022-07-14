@@ -2,7 +2,7 @@ export function initWelcome(params) {
     const div = document.createElement("div");
     const style = document.createElement("style");
     div.innerHTML = `
-    <text-custom text="h1">Piedra, Papel ó Tijera </text-custom>
+    <text-custom text="h1">Piedra, Papel ó Tijera</text-custom>
     <button-custom>Empezar</button-custom>
     <hands-custom></hands-custom>`;
     //@ts-ignore
